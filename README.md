@@ -2,7 +2,9 @@ Tidy-Data Final Project
 
 Cleaning up data into a tidy dataset. This repository contains scripts and data for the (end-of) course project of the Coursera Getting and Cleaning Data (in R) course by Johns Hopkins University.
 
-In this codebook we describe the data contained in the file selected_data_grouped.txt. The original dataset this data is derived is from the dataset made public by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra2 and Jorge L. Reyes-Ortiz as documented in their research paper “A Public Domain Dataset for Human Activity Recognition Using Smartphones.”  The original data comes in two parts: a training dataset, labeled ‘train’ in the original dataset, containing 7,352 observations, and a test dataset, labeled ‘test’ in the original dataset, containing 2,947 observations. 
+In this project we deliver the tidydata contained in the file selected_data_grouped.txt. The data_analysis.R script runs of the original test and train data through tidying steps, until the final file is complete.
+
+The original dataset this data is derived is from the dataset made public by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra2 and Jorge L. Reyes-Ortiz as documented in their research paper “A Public Domain Dataset for Human Activity Recognition Using Smartphones.”  The original data comes in two parts: a training dataset, labeled ‘train’ in the original dataset, containing 7,352 observations, and a test dataset, labeled ‘test’ in the original dataset, containing 2,947 observations. 
 
 There are two categories of data in the original dataset. The first category is composed of a sample of the raw inertial signal data for three variables. The second category is composed of a processed sample of 561 variables. In this codebook we describe a selection from the second category for 79 fields measuring mean values and standard deviations. The procedure we follow is as required for this assignment:
  
