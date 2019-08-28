@@ -31,9 +31,7 @@ Activity  descriptions and their respective numbers are:
 
 The data has a count for the number of observations N (in the range 36 to 95 Observations) for a given subject and a matching activity (subject 1 to 30 X activity 1 to 6, for a total of 180 possible groups). 
 
-In addition to tidying the processed data in the original data set, we also analyzed some of the raw inertial data. This analysis is included in run_analysis.R, and is summarized below:
-
-At first, it is puzzling that the raw inertial data does not have columns labeled and there is no wayto match those columns with other columns in the data. It's a snippet at 50Hz of three measures, and that means each column is a specific relative time (1/50) second later than the column to the left of it.
+In addition to tidying the processed data in the original data set, we also analyzed some of the raw inertial data. This analysis is included in run_analysis.R, and is summarized below. At first, it is puzzling that the raw inertial data does not have columns labeled and there is no wayto match those columns with other columns in the data. It's a snippet at 50Hz of three measures, and that means each column is a specific relative time (1/50) second later than the column to the left of it.
 
 I added the subject and activity labels to the raw data:
 bodyaccX_table_named <- cbind(subject_activity_cbind_named, bodyaccX_table)
@@ -42,36 +40,13 @@ subject_activity_cbind_named <- setDT(subject_activity_cbind_named)
 I filter each of the inertial files by activity. This data table keeps the acitivty information even though only the subject number is relevant since each data table is specific to one activity. I select out each activity since the time sample should be grouped by activity.
 ##1 WALKING  
 bodyaccX_table_named_1 <- filter(bodyaccX_table_named, ActivityNumber == 1 )
-##2 WALKING_UPSTAIRS
-bodyaccX_table_named_2 <- filter(bodyaccX_table_named, ActivityNumber == 2 )
-##3 WALKING_DOWNSTAIRS
-bodyaccX_table_named_3 <- filter(bodyaccX_table_named, ActivityNumber == 3 )
-##4 SITTING
-bodyaccX_table_named_4 <- filter(bodyaccX_table_named, ActivityNumber == 4 )
-##5 STANDING
-bodyaccX_table_named_5 <- filter(bodyaccX_table_named, ActivityNumber == 5 )
-##6 LAYING
-bodyaccX_table_named_6 <- filter(bodyaccX_table_named, ActivityNumber == 6 )
-
 We now have a time series for each activity with 128 time captures at the 50 Hz sampling rate. 
 For example:
 bodyaccX_table_1_t <- data.table(t(bodyaccX_table_named_1))
 This is a transposed data table that can now be plotted as a time series. The tie series is for a subject recorded performing one of the six activities.
-
 This is the raw data, and that means that there are 3 dimensions by 3 variables (body acceleration, gyro relative position, and total acceleration) x 10,299 indiividual time series. That's a lot of possible plots. Here is a tiny sample (from run_analysis.R):
-
 ##1 WALKING  
 bodyaccX_table_1_t[4:131, plot(4:131, V1)]  
-##2 WALKING_UPSTAIRS
-bodyaccX_table_2_t[4:131, plot(4:131, V1)]  
-##3 WALKING_DOWNSTAIRS
-bodyaccX_table_3_t[4:131, plot(4:131, V1)]  
-##4 SITTING
-bodyaccX_table_4_t[4:131, plot(4:131, V1)]  
-##5 STANDING
-bodyaccX_table_5_t[4:131, plot(4:131, V1)]  
-##6 LAYING
-bodyaccX_table_6_t[4:131, plot(4:131, V1)]  
 
 
 
