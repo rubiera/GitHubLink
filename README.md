@@ -33,7 +33,7 @@ I filter each of the inertial files by activity. This data table keeps the aciti
 bodyaccX_table_named_1 <- filter(bodyaccX_table_named, ActivityNumber == 1 )
 We now have a time series for each activity with 128 time captures at the 50 Hz sampling rate. For example:
 bodyaccX_table_1_t <- data.table(t(bodyaccX_table_named_1))
-This is a transposed data table that can now be plotted as a time series. The tie series is for a subject recorded performing one of the six activities.
+This is a transposed data table that can now be plotted as a time series. The time series is for a subject recorded performing one of the six activities.
 This is the raw data, and that means that there are 3 dimensions by 3 variables (body acceleration, gyro relative position, and total acceleration) x 10,299 indiividual time series. That's a lot of possible plots. Here is a tiny sample (from run_analysis.R): 
 bodyaccX_table_1_t[4:131, plot(4:131, V1)]  
 
