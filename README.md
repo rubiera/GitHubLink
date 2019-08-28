@@ -2,7 +2,7 @@ Tidy-Data Final Project
 
 Cleaning up data into a tidy dataset. This repository contains scripts and data for the (end-of) course project of the Coursera Getting and Cleaning Data (in R) course by Johns Hopkins University.
 
-In this project we deliver the tidydata contained in the file selected_data_grouped.txt. The data_analysis.R script runs of the original test and train data through tidying steps, until the final file is complete.
+In this project we deliver the tidy data contained in the file selected_data_grouped.txt. The data_analysis.R script runs of the original test and train data through tidying steps, until the final file is complete.
 
 The original dataset this data is derived is from the dataset made public by Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra2 and Jorge L. Reyes-Ortiz as documented in their research paper “A Public Domain Dataset for Human Activity Recognition Using Smartphones.”  The original data comes in two parts: a training dataset, labeled ‘train’ in the original dataset, containing 7,352 observations, and a test dataset, labeled ‘test’ in the original dataset, containing 2,947 observations. 
 
@@ -29,5 +29,26 @@ Activity  descriptions and their respective numbers are:
 7.	LAYING
 
 The data has a count for the number of observations N (in the range 36 to 95 Observations) for a given subject and a matching activity (subject 1 to 30 X activity 1 to 6, for a total of 180 possible groups). 
+
+In addition to tidying the processed data in the original data set, we also analyzed some of the raw inertial data. This analysis is included in run_analysis.R, and is summarized below:
+
+<code>## Source: local data frame [76 x 3]
+## 
+##    Speaker  Gram2             data
+##     (fctr) (fctr)            (chr)
+## 1      s01   past  &lt;tbl_df [58,3]&gt;
+## 2      s01   mono &lt;tbl_df [171,3]&gt;
+## 3      s02   mono &lt;tbl_df [218,3]&gt;
+## 4      s02   past  &lt;tbl_df [46,3]&gt;
+## 5      s03   mono &lt;tbl_df [219,3]&gt;
+## 6      s03   past  &lt;tbl_df [56,3]&gt;
+## 7      s04   mono &lt;tbl_df [240,3]&gt;
+## 8      s04   past  &lt;tbl_df [41,3]&gt;
+## 9      s05   mono &lt;tbl_df [184,3]&gt;
+## 10     s05   past  &lt;tbl_df [38,3]&gt;
+## ..     ...    ...              ...
+</code>
+
+
 
 
