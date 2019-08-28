@@ -52,3 +52,7 @@ head(subject_activity_cbind_test)
 table(subject_activity_cbind_test)
 nrow(subject_activity_cbind_test)
 
+#we still have data.table and it inherits from data frames
+class(subject_activity_cbind_test)
+
+
